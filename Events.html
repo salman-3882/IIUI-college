@@ -42,7 +42,7 @@
             justify-content: space-evenly;
             align-items: center;
         }
-        .events-video video{
+         video{
             width: 500px;
             border: 5px solid #03285e;
             border-radius: 10px;
@@ -77,12 +77,17 @@
             }
           } 
           @media (max-width:400px){
+
             .events-video{
               margin: 100px 0;
             }
             .events-video video,.events-info{
               width: 300px;
               margin:  0 auto;
+            }
+            video{
+              width: 200px;
+              height:250px
             }
           }
     </style>
@@ -143,7 +148,7 @@
         <h1>IIUI Events</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing eli Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non eveniet corporis sapiente fuga qui, adipisci iusto vero, ex tempora inventore laboriosam nemo consectetur est dolore reiciendis laudantium, hic nisi rem similique nesciunt dolor quam amet pariatur! Quisquam atque laborum consequatur optio illum animi eius accusamus sunt quaerat impedit. Alias, eveniet! t. Hic cum, accusamus beatae cupiditate consequuntur dolores reiciendis dolor deserunt atque architecto in, soluta blanditiis dolorum a rem numquam quod, maxime repellendus.</p>
     </div>
-    <video src="./videos/Events.mp4" autoplay loop></video>
+    <video src="./videos/Events.mp4" controls></video>
 
   </div>
 </section>
@@ -155,7 +160,8 @@
             <div class="IIUI-logo">
               <img src="./images/IIUI-logo.png" alt="">
             </div>
-    
+            <h1>We are Social</h1>
+
     
             <div class="icons d-flex">
               <a href="https://www.facebook.com/iiuiOandAlevels/"><i class="fa-brands fa-facebook fa-fade"></i> </a>

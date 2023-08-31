@@ -1,59 +1,115 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Draggable Image Slider | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        /* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
 
+.wrapper{
+  display: flex;
+  max-width: 1200px;
+  position: relative;
+}
+.wrapper i{
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: #343F4F;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.9);
+}
+.wrapper i:hover{
+  background: #f2f2f2;
+}
+.wrapper i:first-child{
+  left: -22px;
+  display: none;
+}
+.wrapper i:last-child{
+  right: -22px;
+}
+.wrapper .carousel{
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.carousel.dragging{
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.carousel.dragging img{
+  pointer-events: none;
+}
+.carousel img{
+  height: 400px;
+  /* object-fit: cover; */
+  user-select: none;
+  margin-left: 14px;
+  width: calc(100% / 3);
+}
+.carousel img:first-child{
+  margin-left: 0px;
+}
 
-
-// search-box open close js code
-    let navbar = document.querySelector(".navbar");
-    let searchBox = document.querySelector(".search-box .bx-search");
-    // let searchBoxCancel = document.querySelector(".search-box .bx-x");
-    
-    searchBox.addEventListener("click", ()=>{
-      navbar.classList.toggle("showInput");
-      if(navbar.classList.contains("showInput")){
-        searchBox.classList.replace("bx-search" ,"bx-x");
-      }else {
-        searchBox.classList.replace("bx-x" ,"bx-search");
-      }
-    });
-    
-    // sidebar open close js code
-    let navLinks = document.querySelector(".nav-links");
-    let menuOpenBtn = document.querySelector(".navbar .bx-menu");
-    let menuCloseBtn = document.querySelector(".nav-links .bx-x");
-    menuOpenBtn.onclick = function() {
-    navLinks.style.left = "0";
-    }
-    menuCloseBtn.onclick = function() {
-    navLinks.style.left = "-100%";
-    }
-    
-    
-    // sidebar submenu open close js code
-    let htmlcssArrow = document.querySelector(".htmlcss-arrow");
-    htmlcssArrow.onclick = function() {
-     navLinks.classList.toggle("show1");
-    }
-    let moreArrow = document.querySelector(".more-arrow");
-    moreArrow.onclick = function() {
-     navLinks.classList.toggle("show2");
-    }
-    let jsArrow = document.querySelector(".js-arrow");
-    jsArrow.onclick = function() {
-     navLinks.classList.toggle("show3");
-    }
-//navbar scroll animation
-let nav = document.querySelector(".nav");
-
- window.onscroll=function(){
-  if(document.documentElement.scrollTop > 20){
-    nav.classList.add("sticky");
-    // navLinks.classList.add("sticky")
-  }else{
-    nav.classList.remove("sticky");
-    // navLinks.classList.remove("sticky")
+@media screen and (max-width: 900px) {
+  .carousel img{
+    width: calc(100% / 2);
   }
 }
 
-//Students Results wrapper
+@media screen and (max-width: 550px) {
+  .carousel img{
+    width: 100%;
+  }
+}
+    </style>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <div class="carousel">
+        <img src="./images/Results/Results (10).jpeg" alt="img" draggable="false">
+        <img src="./images/Results/Results (5).jpeg" alt="img" draggable="false">
+        <img src="./images/Results/Results (4).jpeg" alt="img" draggable="false">
+        <img src="./images/Results/Results (3).jpeg" alt="img" draggable="false">
+        <img src="./images/Results/Results (2).jpeg" alt="img" draggable="false">
+        <img src="./images/Results/Results (1).jpeg" alt="img" draggable="false">
+        <img src="./images/Results/Results (6).jpeg" alt="img" draggable="false">
+        <img src="./images/Results/Results (8).jpeg" alt="img" draggable="false">
+        <img src="./images/Results/Results (9).jpeg" alt="img" draggable="false">
+>
+      </div>
+      <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+
+    <script>
+
 const carousel = document.querySelector(".carousel"),
 firstImg = carousel.querySelectorAll("img")[0],
 arrowIcons = document.querySelectorAll(".wrapper i");
@@ -127,5 +183,7 @@ carousel.addEventListener("touchmove", dragging);
 
 document.addEventListener("mouseup", dragStop);
 carousel.addEventListener("touchend", dragStop);
-
-
+    </script>
+    
+  </body>
+</html>

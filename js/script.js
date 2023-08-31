@@ -114,8 +114,8 @@ gsap.from(".team-container .container",{
   scrollTrigger:{
     trigger:".team-container .container",
     scroller:"body",
-    start:"top 60%",
-  
+    start:"top 70%",
+    
 
   },
   opacity:0,
@@ -127,7 +127,7 @@ gsap.from("footer",{
   scrollTrigger:{
     trigger:"footer",
     scroll:"body",
-    start:"top 40%"
+    start:"top 50%"
   },
   opacity:0,
   y:30
